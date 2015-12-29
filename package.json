@@ -8,8 +8,6 @@
 	"start":"npm test",
     
 	"pretest":"gulp unitTest",
-    "test": "gulp webdriverUpdate",
-    "posttest": "gulp e2eTest",
 	
 	"poststart":"gulp build --prod"
   },
