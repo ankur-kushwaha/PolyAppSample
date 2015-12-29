@@ -5,11 +5,12 @@
     "prestart": "npm install",
     "postinstall": "bower install",
     
-	"start":"npm test",
-    
-	"pretest":"gulp unitTest",
+	"start":"gulp unitTest --stage=prod",
 	
-	"poststart":"gulp build --prod"
+	"pretest":"npm install",
+	"test": "gulp webdriverUpdate",
+    "posttest": "gulp e2eTest",
+	"poststart":"gulp build --stage=prod"
   },
   "dependencies": {},
   "devDependencies": {
