@@ -10,7 +10,7 @@
     
     "pretest": "npm install",
     "test": "gulp webdriverUpdate",
-    "posttest": "gulp e2eTest --stage=prod"
+    "posttest": "gulp e2eTestWithServer"
   },
   "dependencies": {},
   "devDependencies": {

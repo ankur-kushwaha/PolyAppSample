@@ -1,6 +1,7 @@
 'use strict';
 
 var karmaConf = require('../karma.config.js');
+var browserSync = require('browser-sync').create();
 
 // karmaConf.files get populated in karmaFiles
 karmaConf.files = [
@@ -63,7 +64,8 @@ module.exports = function (gulp, $, config) {
         configFile: 'protractor.config.js'
       }))
       .on('error', function (e) {
-        console.log(e);
+        //console.log(e);
+        process.exit(1);
       });
   });
 
@@ -72,4 +74,21 @@ module.exports = function (gulp, $, config) {
   gulp.task('webdriverUpdate', $.protractor.webdriver_update);
   /* jshint +W106 */
   // jscs:enable requireCamelCaseOrUpperCaseIdentifiers
+  
+  //start server for e2e test
+  gulp.task('webserver', function() {
+    browserSync.init({
+        host: config.host,
+        open: false,
+        port: config.port,
+        server: {
+          baseDir: config.buildDir
+        }
+    });
+  });
+  
+  gulp.task('e2eTestWithServer',['webserver','e2eTest'],function(){
+    browserSync.exit();
+    process.exit(0);
+  })
 };
