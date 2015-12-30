@@ -4,13 +4,11 @@
   "scripts": {
     "prestart": "npm install",
     "postinstall": "bower install",
-    
-	"start":"gulp unitTest --stage=prod",
-	
-	"pretest":"npm install",
-	"test": "gulp webdriverUpdate",
+    "start": "gulp unitTest --stage=prod",
+    "pretest": "npm install",
+    "test": "gulp webdriverUpdate",
     "posttest": "gulp e2eTest",
-	"poststart":"gulp build --stage=prod"
+    "poststart": "gulp build --stage=prod"
   },
   "dependencies": {},
   "devDependencies": {
@@ -51,6 +49,7 @@
     "gulp-tslint": "^3.1.2",
     "gulp-uglify": "^1.0.0",
     "jasmine-reporters": "^2.1.1",
+    "jasmine-spec-reporter": "^2.4.0",
     "jshint-stylish": "^2.0.1",
     "karma": "^0.13.3",
     "karma-coverage": "^0.4.2",
@@ -60,6 +59,7 @@
     "karma-ng-html2js-preprocessor": "^0.1.0",
     "karma-phantomjs-launcher": "^0.2.0",
     "karma-sinon": "^1.0.3",
+    "karma-spec-reporter": "0.0.23",
     "lodash": "^3.6.0",
     "main-bower-files": "^2.0.0",
     "multi-glob": "^0.4.0",

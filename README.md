@@ -76,3 +76,29 @@
       //.pipe($.eslint({quiet:true}))
       //.pipe($.eslint.formatEach('./node_modules/eslint-path-formatter'))
       //.pipe($.eslint.failOnError())
+	  
+	  
+## Use jasmine-spec-reporter with Protractor
+	First	
+		npm install -D jasmine-spec-reporter
+	
+	In your Protractor configuration file:
+
+		exports.config = {
+		   // your config here ...
+
+		   onPrepare: function() {
+			  var SpecReporter = require('jasmine-spec-reporter');
+			  // add jasmine spec reporter
+			  jasmine.getEnv().addReporter(new SpecReporter({displayStacktrace: 'all'}));
+		   }
+		}
+		
+	Remove protractor dot reporter
+		In your protractor configuration file, add the print function in the `jasmineNodeOpts` section:
+
+		jasmineNodeOpts: {
+		   ...
+		   print: function() {}
+		}
+	
