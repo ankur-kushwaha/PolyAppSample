@@ -2,13 +2,15 @@
   "name": "PolyAppSample",
   "version": "0.0.0",
   "scripts": {
-    "prestart": "npm install",
     "postinstall": "bower install",
-    "start": "gulp unitTest --stage=prod",
+    
+    "prestart":"npm install",
+    "start": "gulp unitTest",
+    "poststart":"gulp build --stage=prod",
+    
     "pretest": "npm install",
     "test": "gulp webdriverUpdate",
-    "posttest": "gulp e2eTest",
-    "poststart": "gulp build --stage=prod"
+    "posttest": "gulp e2eTest --stage=prod"
   },
   "dependencies": {},
   "devDependencies": {
