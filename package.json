@@ -15,7 +15,6 @@
     "browser-sync": "^2.2.3",
     "del": "^2.0.0",
     "find-up": "^1.1.0",
-    "fs": "0.0.2",
     "glob": "^6.0.3",
     "gulp": "^3.8.7",
     "gulp-angular-filesort": "^1.1.1",
